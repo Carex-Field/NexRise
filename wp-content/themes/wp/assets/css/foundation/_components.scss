@@ -1,0 +1,35 @@
+@use "../settings/mixin" as r;
+@use "../settings/variable" as v;
+
+.c-btn1 {
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  &--primary {
+    background: #fff;
+    color: v.$main-color;
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+  &--outline {
+    border: 2px solid #fff;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: v.$main-color;
+    }
+  }
+}
+
+@keyframes bgMove {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}

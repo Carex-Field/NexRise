@@ -1,7 +1,206 @@
 <?php get_header() ?>
-
 <main>
-  <h1>Top</h1>
+  <section class="p-top__fv">
+    <div class="p-top__fv__inner">
+      <div class="p-top__fv__content">
+        <p class="p-top__fv__ttl">
+          中小企業のDXを、<br>
+          実行まで伴走する。
+        </p>
+        <p class="p-top__fv__lead">
+          戦略立案から開発・運用まで、
+          成果につながるDX支援をワンストップで提供します。
+        </p>
+        <div class="p-top__fv__btn">
+          <a href="<?php echo get_post_type_archive_link('service'); ?>" class="c-btn1 c-btn1--primary">
+            サービスを見る
+          </a>
+          <a href="/contact/" class="c-btn1 c-btn1--outline">
+            無料相談はこちら
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-top1 p-top__sec">
+    <div class="p-top__inner">
+      <div class="p-top__head">
+        <h2 class="p-top__head__ttl">
+          こんなお悩み<br class="sp-only">ありませんか？
+        </h2>
+      </div>
+      <ul class="p-top1__list">
+        <li class="p-top1__item">
+          <div class="p-top1__icon">
+            <img src="/wp-content/themes/wp/assets/images/top/worries1.svg" alt="">
+          </div>
+          <p class="p-top1__txt">
+            業務が属人化している
+          </p>
+        </li>
+        <li class="p-top1__item">
+          <div class="p-top1__icon">
+            <img src="/wp-content/themes/wp/assets/images/top/worries2.svg" alt="">
+          </div>
+          <p class="p-top1__txt">
+            アナログ管理が多い
+          </p>
+        </li>
+        <li class="p-top1__item">
+          <div class="p-top1__icon">
+            <img src="/wp-content/themes/wp/assets/images/top/worries3.svg" alt="">
+          </div>
+          <p class="p-top1__txt">
+            システム導入に不安がある
+          </p>
+        </li>
+      </ul>
+      <div class="p-top1__arrows">
+        <img src="/wp-content/themes/wp/assets/images/top/arrows-down.svg" alt="">
+      </div>
+      <p class="p-top1__end">
+        NexRiseが<br class="sp-only">解決します
+      </p>
+    </div>
+  </section>
+  <section class="p-top2 p-top__sec">
+    <div class="p-top__inner">
+      <div class="p-top__head">
+        <h2 class="p-top__head__ttl">サービス</h2>
+        <p class="p-top__head__lead">
+          戦略立案から開発・運用まで、<br class="sp-only">ワンストップで支援します。
+        </p>
+      </div>
+      <div class="p-top__grid">
+        <article class="p-top2__card">
+          <div class="p-top2__card__body">
+            <h3 class="p-top2__card__ttl">
+              title
+            </h3>
+            <p class="p-top2__card__txt">
+              text
+            </p>
+            <a href="<?php the_permalink(); ?>" class="p-top2__card__link">
+              詳細を見る →
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="p-top3 p-top__sec">
+    <div class="p-top__inner">
+      <div class="p-top__head">
+        <h2 class="p-top__head__ttl">導入事例</h2>
+        <p class="p-top__head__lead">
+          業界ごとの課題に合わせた<br class="sp-only">DX支援の実績をご紹介します。
+        </p>
+      </div>
+      <div class="p-top__grid">
+        <article class="p-top3__card">
+          <div class="p-top3__card__body">
+            <!-- タクソノミー表示 -->
+            <div class="p-top3__card__labels">
+                <span class="p-top3__card__label p-top3__card__label--industry">
+                  産業名
+                </span>
+                <span class="p-top3__card__label p-top3__card__label--issue">
+                  問題名
+                </span>
+            </div>
+            <!-- 企業名 -->
+            <h3 class="p-top3__card__company">
+              企業名
+            </h3>
+            <!-- 成果数値 -->
+            <div class="p-top3__card__result">
+              <span class="p-top3__card__number">
+                成果数値
+              </span>
+              <span class="p-top3__card__unit">
+                ％
+              </span>
+            </div>
+            <p class="p-top3__card__result">
+              結果の詳細
+            </p>
+            <a href="<?php the_permalink(); ?>" class="p-top3__card__link">
+              詳細を見る →
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="p-top4 p-top__sec">
+    <div class="p-top__inner">
+      <div class="p-top__head">
+        <h2 class="p-top__head__ttl">
+          選ばれる理由
+        </h2>
+      </div>
+      <div class="p-top4__grid">
+        <ul class="p-top4__list">
+          <li class="p-top4__item">
+            <h3 class="p-top4__item__ttl">
+              <span>01</span>
+              現場理解から始める改善設計
+            </h3>
+            <p class="p-top4__item__txt">
+              業務の実態を把握し、<br>
+              本質的な課題を整理します。
+            </p>
+          </li>
+          <li class="p-top4__item">
+            <h3 class="p-top4__item__ttl">
+              <span>02</span>
+              成果から逆算する戦略立案
+            </h3>
+            <p class="p-top4__item__txt">
+              ゴールを明確にし、<br>
+              KPIベースで改善を設計します。
+            </p>
+          </li>
+          <li class="p-top4__item">
+            <h3 class="p-top4__item__ttl">
+              <span>03</span>
+              定着まで伴走する支援体制
+            </h3>
+            <p class="p-top4__item__txt">
+              実行だけでなく、<br>
+              現場に根付く仕組みを構築します。
+            </p>
+          </li>
+          <li class="p-top4__item">
+            <h3 class="p-top4__item__ttl">
+              <span>04</span>
+              ワンストップ対応
+            </h3>
+            <p class="p-top4__item__txt">
+              戦略策定から運用改善まで、<br>
+              責任を持って対応します。
+            </p>
+          </li>
+        </ul>
+        <div class="p-top4__img">
+          <img src="/wp-content/themes/wp/assets/images/top/cycle.png" alt="Plan, Excecute, Optimize">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-top5">
+    <div class="p-top__inner">
+      <div class="p-top5__content">
+        <h2 class="p-top5__ttl">
+          その悩み、今日で<br class="sp-only">終わらせましょう。
+        </h2>
+        <div class="p-top5__btn">
+          <a href="/contact/" class="c-btn1 c-btn1--primary">
+            無料相談はこちら
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-
 <?php get_footer() ?>
