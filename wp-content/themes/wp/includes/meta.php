@@ -10,7 +10,7 @@ if ( empty( $GLOBALS['pageid'] ) ) {
 	} else if ( is_page() ) {
 		$pageid = $post->post_name;
 	} else if ( is_single() ) {
-		$pageid = $post->post_type . 'detail';
+		$pageid = $post->post_type . '-detail';
 	} else {
 		$pageid = '';
 	}
@@ -25,18 +25,23 @@ $description = "";
 $scripts = false;
 
 if ( is_front_page() || is_home() ) {
-	$title       = "";
+	$title       = "NexRise";
 	$description = "";
 	$scripts     = true;
 } else if ( is_page() ) {
-	$title       = $post->post_title . " | ○○";
+	$title       = $post->post_title . " | NexRise";
 	$description = "";
 } else if ( is_single() ) {
-	$title       = $post->post_title . " | ○○";
+	$title       = $post->post_title . " | NexRise";
 	$description = "";
 }
 
 // meta follow $pageid
+if ( $pageid === 'service' ) {
+	$title       = "サービス一覧 | NexRise";
+	$description = "";
+	$scripts     = true;
+}
 // if ( $pageid === 'news' ) {
 // 	$title       = "お知らせ | ○○";
 // 	$description = "";

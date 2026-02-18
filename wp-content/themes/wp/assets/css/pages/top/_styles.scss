@@ -2,6 +2,11 @@
 @use "../../settings/_mixin" as r;
 
 .p-top {
+  .inner {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 100px 0;
+  }
   &__fv {
     position: relative;
     height: 100vh;
@@ -100,7 +105,6 @@
     }
   }
   &1 {
-    background: v.$base-color;
     &__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -112,7 +116,7 @@
       }
     }
     &__item {
-      background: #fff;
+      background: v.$base-color;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       text-align: center;
@@ -140,44 +144,11 @@
     }
   }
   &2 {
-    &__card {
-      background: v.$base-color;
-      border-radius: 8px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-      padding: 40px 30px;
-      transition: all 0.3s ease;
-      @include r.sp {
-        padding: 30px 20px;
-      }
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      }
-      &__ttl {
-        font-size: 20px;
-        font-weight: 600;
-      }
-      &__txt {
-        font-size: 14px;
-        line-height: 1.8;
-        color: #475569;
-        margin-top: 16px;
-      }
-      &__link {
-        font-size: 14px;
-        font-weight: 600;
-        color: #2563eb;
-        margin-top: 24px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
+    background: v.$base-color;
   }
   &3 {
-    background: v.$base-color;
     &__card {
-      background: #fff;
+      background: v.$base-color;
       border-radius: 10px;
       text-align: center;
       padding: 40px 30px;
@@ -241,6 +212,7 @@
     }
   }
   &4 {
+    background: v.$base-color;
     &__grid {
       position: relative;
     }
@@ -248,7 +220,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       width: calc(1080 / 1200 * 100%);
-      background: v.$base-color;
+      background: #fff;
       border-radius: 10px;
       margin-top: 60px;
       padding: 30px;
@@ -259,7 +231,7 @@
       }
     }
     &__item {
-      background: v.$base-color;
+      background: #fff;
       padding-bottom: 30px;
       @include r.sp {
         padding-bottom: 0;
@@ -302,33 +274,10 @@
       right: 0;
       width: calc(300 / 1200 * 100%);
       max-width: 300px;
-      background: linear-gradient(to right, v.$base-color, #fff);
+      background: linear-gradient(to left, v.$base-color, #fff);
       @include r.sp {
         display: none;
       }
-    }
-  }
-  &5 {
-    position: relative;
-    padding: 40px 0;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
-    &__content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    &__ttl {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.5;
-      @include r.sp {
-        font-size: 28px;
-      }
-    }
-    &__btn {
-      margin-top: 40px;
     }
   }
 }

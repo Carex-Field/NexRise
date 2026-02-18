@@ -1,0 +1,109 @@
+@use "../../settings/_variable" as v;
+@use "../../settings/_mixin" as r;
+
+.p-service {
+  .inner {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+  &__fv {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      v.$main-color 0%,
+      v.$accent-color1 100%
+    );
+    color: #fff;
+    text-align: center;
+    padding: 140px 0;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      bottom: -100px;
+      left: -100px;
+      border-radius: 50%;
+    }
+    &__ttl {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    &__lead {
+      max-width: 700px;
+      line-height: 1.8;
+      margin: 0 auto;
+    }
+  }
+  &__filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 60px;
+    &__btn {
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      padding: 10px 24px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background: #cbd5e1;
+      }
+      &.is-active {
+        background: v.$main-color;
+        color: #fff;
+      }
+    }
+  }
+  &__list {
+    background: v.$base-color;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    @include r.pad {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r.sp {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__card {
+    opacity: 1;
+    transition: 0.3s ease;
+    &.is-hidden {
+      display: none;
+    }
+    &.is-fade-out {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+    }
+    &.is-fade-in {
+      opacity: 1;
+    }
+  }
+}

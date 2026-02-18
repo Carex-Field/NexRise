@@ -72,19 +72,43 @@
         </p>
       </div>
       <div class="p-top__grid">
-        <article class="p-top2__card">
-          <div class="p-top2__card__body">
-            <h3 class="p-top2__card__ttl">
-              title
+        <?php
+          $args = array(
+            'post_type' => 'service',
+            'posts_per_page' => 3
+          );
+          $service_query = new WP_Query($args);
+          if ($service_query->have_posts()) :
+            while ($service_query->have_posts()) :
+              $service_query->the_post();
+        ?>
+        <article class="c-card1">
+          <a href="<?php the_permalink(); ?>" class="c-card1__link">
+            <div class="c-card1__img">
+              <?php if($fv = get_field('service_fv')) : ?>
+                <img src="<?php echo $fv; ?>" alt="<?php the_title(); ?>">
+              <?php else: ?>
+                <img src="/wp-content/themes/wp/assets/images/service/card_img.png" alt="<?php the_title(); ?>">
+              <?php endif; ?>
+            </div>
+            <h3 class="c-card1__ttl">
+              <?php the_title(); ?>
             </h3>
-            <p class="p-top2__card__txt">
-              text
+            <?php if ($lead = get_field('service_lead')) : ?>
+              <p class="c-card1__lead">
+                <?php echo $lead; ?>
+              </p>
+            <?php endif; ?>
+            <p class="c-card1__txt">
+              詳しく見る →
             </p>
-            <a href="<?php the_permalink(); ?>" class="p-top2__card__link">
-              詳細を見る →
-            </a>
-          </div>
+          </a>
         </article>
+        <?php
+          endwhile;
+            wp_reset_postdata();
+          endif;
+        ?>
       </div>
     </div>
   </section>
@@ -188,18 +212,14 @@
       </div>
     </div>
   </section>
-  <section class="p-top5">
-    <div class="p-top__inner">
-      <div class="p-top5__content">
-        <h2 class="p-top5__ttl">
-          その悩み、今日で<br class="sp-only">終わらせましょう。
-        </h2>
-        <div class="p-top5__btn">
-          <a href="/contact/" class="c-btn1 c-btn1--primary">
-            無料相談はこちら
-          </a>
-        </div>
-      </div>
+  <section class="c-cta1">
+    <div class="inner">
+      <h3 class="c-cta1__ttl">
+        その悩み、今日で<br class="sp-only">終わらせましょう。
+      </h3>
+      <a href="<?php echo home_url('/contact/'); ?>" class="c-cta1__btn">
+        無料相談はこちら
+      </a>
     </div>
   </section>
 </main>
