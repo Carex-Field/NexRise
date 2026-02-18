@@ -42,6 +42,15 @@ if ( $pageid === 'service' ) {
 	$description = "";
 	$scripts     = true;
 }
+if ( $pageid === 'case' ) {
+	$title       = "導入事例 | NexRise";
+	$description = "";
+	$scripts     = true;
+}
+if ( $pageid === 'case-detail' ) {
+	$description = "";
+	$scripts     = true;
+}
 // if ( $pageid === 'news' ) {
 // 	$title       = "お知らせ | ○○";
 // 	$description = "";

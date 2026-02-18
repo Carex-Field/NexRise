@@ -1,7 +1,7 @@
 @use "../../settings/_variable" as v;
 @use "../../settings/_mixin" as r;
 
-.p-service {
+.p-case {
   .inner {
     width: min(1100px, 90%);
     margin: 0 auto;
@@ -54,6 +54,13 @@
       margin: 0 auto;
     }
   }
+  &__list {
+    background: #fff;
+    padding: 100px 0;
+    @include r.sp {
+      padding: 70px 0;
+    }
+  }
   &__filter {
     display: flex;
     flex-wrap: wrap;
@@ -76,17 +83,10 @@
       }
     }
   }
-  &__list {
-    background: v.$base-color;
-    padding: 100px 0;
-    @include r.sp {
-      padding: 70px 0;
-    }
-  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 40px;
     @include r.pad {
       grid-template-columns: repeat(2, 1fr);
     }

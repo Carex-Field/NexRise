@@ -65,9 +65,9 @@ $pageid = "service"; ?>
   <!-- CTA -->
   <section class="c-cta1">
     <div class="inner">
-      <h3 class="c-cta1__txt">
+      <p class="c-cta1__txt">
         まずはお気軽にご相談ください
-      </h3>
+      </p>
       <a href="<?php echo home_url('/contact/'); ?>" class="c-cta1__btn">
         お問い合わせはこちら
       </a>

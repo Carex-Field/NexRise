@@ -12,10 +12,10 @@
           成果につながるDX支援をワンストップで提供します。
         </p>
         <div class="p-top__fv__btn">
-          <a href="<?php echo get_post_type_archive_link('service'); ?>" class="c-btn1 c-btn1--primary">
+          <a href="<?php echo home_url('/service/'); ?>" class="c-btn1 c-btn1--primary">
             サービスを見る
           </a>
-          <a href="/contact/" class="c-btn1 c-btn1--outline">
+          <a href="<?php echo home_url('/contact/'); ?>" class="c-btn1 c-btn1--outline">
             無料相談はこちら
           </a>
         </div>
@@ -121,38 +121,54 @@
         </p>
       </div>
       <div class="p-top__grid">
-        <article class="p-top3__card">
-          <div class="p-top3__card__body">
-            <!-- タクソノミー表示 -->
-            <div class="p-top3__card__labels">
-                <span class="p-top3__card__label p-top3__card__label--industry">
-                  産業名
-                </span>
-                <span class="p-top3__card__label p-top3__card__label--issue">
-                  問題名
-                </span>
+        <?php
+          $args = array(
+            'post_type' => 'case',
+            'posts_per_page' => 3
+          );
+          $case_query = new WP_Query($args);
+          if ($case_query->have_posts()) :
+          while ($case_query->have_posts()) :
+            $case_query->the_post();
+            $term_slugs = wp_get_post_terms(get_the_ID(), 'case_category', ['fields' => 'slugs']);
+        ?>
+        <article class="p-case__card c-card2" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
+          <a href="<?php the_permalink(); ?>" class="c-card2__link">
+            <div class="c-card2__img">
+              <img src="/wp-content/themes/wp/assets/images/case/card_img.png" alt="<?php the_title(); ?>">
             </div>
-            <!-- 企業名 -->
-            <h3 class="p-top3__card__company">
-              企業名
-            </h3>
-            <!-- 成果数値 -->
-            <div class="p-top3__card__result">
-              <span class="p-top3__card__number">
-                成果数値
-              </span>
-              <span class="p-top3__card__unit">
-                ％
-              </span>
+            <div class="c-card2__body">
+              <div class="c-card2__category">
+                <?php
+                $terms = get_the_terms(get_the_ID(), 'case_category');
+                if ($terms && !is_wp_error($terms)) :
+                  foreach ($terms as $term) :
+                    echo '<span>' . esc_html($term->name) . '</span>';
+                  endforeach;
+                endif;
+                ?>
+              </div>
+              <h3 class="c-card2__ttl">
+                <?php the_title(); ?>
+              </h3>
+                <?php $result_number = get_field('result_number'); ?>
+                <div class="c-card2__result">
+                  <?php if($result_txt = get_field('result_txt')) :
+                    echo $result_txt;
+                  endif; ?>
+                  <span class="c-card2__result__number" data-number="<?php echo esc_attr($result_number); ?>">
+                    0
+                  </span>
+                  <?php echo get_field('result_unit'); ?>
+                </div>
             </div>
-            <p class="p-top3__card__result">
-              結果の詳細
-            </p>
-            <a href="<?php the_permalink(); ?>" class="p-top3__card__link">
-              詳細を見る →
-            </a>
-          </div>
+          </a>
         </article>
+        <?php
+          endwhile;
+            wp_reset_postdata();
+          endif;
+        ?>
       </div>
     </div>
   </section>
@@ -214,9 +230,9 @@
   </section>
   <section class="c-cta1">
     <div class="inner">
-      <h3 class="c-cta1__ttl">
+      <p class="c-cta1__ttl">
         その悩み、今日で<br class="sp-only">終わらせましょう。
-      </h3>
+      </p>
       <a href="<?php echo home_url('/contact/'); ?>" class="c-cta1__btn">
         無料相談はこちら
       </a>

@@ -5,7 +5,6 @@
   .inner {
     width: min(1100px, 90%);
     margin: 0 auto;
-    padding: 100px 0;
   }
   &__fv {
     position: relative;
@@ -145,71 +144,6 @@
   }
   &2 {
     background: v.$base-color;
-  }
-  &3 {
-    &__card {
-      background: v.$base-color;
-      border-radius: 10px;
-      text-align: center;
-      padding: 40px 30px;
-      transition: 0.3s ease;
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      }
-      &__labels {
-        margin-bottom: 20px;
-      }
-      &__label {
-        border-radius: 20px;
-        font-size: 12px;
-        margin: 0 4px;
-        padding: 4px 10px;
-        display: inline-block;
-        &--industry {
-          background: rgba(37, 99, 235, 0.1);
-          color: v.$main-color;
-        }
-        &--issue {
-          background: rgba(15, 118, 110, 0.1);
-          color: #0f766e;
-        }
-      }
-      &__company {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 30px;
-      }
-      &__result {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        margin-bottom: 10px;
-      }
-      &__number {
-        font-size: 48px;
-        font-weight: 700;
-        color: v.$main-color;
-      }
-      &__unit {
-        font-size: 20px;
-        color: v.$main-color;
-        margin-left: 4px;
-      }
-      &__result {
-        font-size: 14px;
-        color: #475569;
-        margin-bottom: 20px;
-      }
-      &__link {
-        font-size: 14px;
-        font-weight: 600;
-        color: v.$main-color;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
   }
   &4 {
     background: v.$base-color;

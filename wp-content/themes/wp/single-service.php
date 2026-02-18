@@ -13,7 +13,7 @@
     </div>
   </section>
   <!-- 課題 -->
-  <section class="p-service-detail__sec1">
+  <section class="p-service-detail__sec p-service-detail__sec1">
     <div class="inner">
       <h2 class="p-service-detail__sec__ttl">このようなお悩みはありませんか？</h2>
       <ul class="p-service-detail__sec1__list">
@@ -29,7 +29,7 @@
     </div>
   </section>
   <!-- サービス詳細 -->
-  <section class="p-service-detail__sec2">
+  <section class="p-service-detail__sec p-service-detail__sec2">
     <div class="inner">
       <h2 class="p-service-detail__sec__ttl">サービス内容</h2>
       <div class="p-service-detail__sec2__content">
@@ -55,7 +55,7 @@
     </div>
   </section>
   <!-- 支援の流れ -->
-  <section class="p-service-detail__sec3">
+  <section class="p-service-detail__sec p-service-detail__sec3">
     <div class="inner">
       <h2 class="p-service-detail__sec__ttl">ご支援の流れ</h2>
       <ol class="p-service-detail__sec3__list">
@@ -71,7 +71,7 @@
     </div>
   </section>
   <!-- 得られる成果 -->
-  <section class="p-service-detail__sec4">
+  <section class="p-service-detail__sec p-service-detail__sec4">
     <div class="inner">
       <h2 class="p-service-detail__sec__ttl">得られる成果</h2>
       <ul class="p-service-detail__sec4__list">
@@ -88,37 +88,49 @@
   </section>
   <!-- 関連事例 -->
   <?php
-  $related_cases = get_field('related_cases');
-  if ($related_cases) :
+    $related_cases = get_field('related_cases');
+    if ($related_cases) :
   ?>
-    <section class="p-service-detail__sec5">
-      <div class="inner">
-        <h2 class="p-service-detail__sec__ttl">関連事例</h2>
-        <div class="p-service-detail__sec5__list">
-          <?php foreach ($related_cases as $post) :
-            setup_postdata($post); ?>
-            <article class="p-service-detail__sec5__card">
-              <a href="<?php the_permalink(); ?>" class="p-service-detail__sec5__card__link">
-                <h3 class="p-service-detail__sec5__card__ttl">
-                  <?php the_title(); ?>
-                </h3>
-                <p class="p-service-detail__sec5__card__txt">
-                  詳しく見る
-                </p>
+  <section class="p-service-detail__sec p-service-detail__sec5">
+    <div class="inner">
+      <h2 class="p-service-detail__sec__ttl">関連事例</h2>
+      <div class="p-service-detail__sec5__list">
+        <?php foreach ($related_cases as $post) :
+          setup_postdata($post); ?>
+            <article class="c-card2">
+              <a href="<?php the_permalink(); ?>" class="c-card2__link">
+                <div class="c-card2__img">
+                  <img src="/wp-content/themes/wp/assets/images/case/card_img.png" alt="<?php the_title(); ?>">
+                </div>
+                <div class="c-card2__body">
+                  <div class="c-card2__category">
+                    <?php
+                    $terms = get_the_terms(get_the_ID(), 'case_category');
+                    if ($terms && !is_wp_error($terms)) :
+                      foreach ($terms as $term) :
+                        echo '<span>' . esc_html($term->name) . '</span>';
+                      endforeach;
+                    endif;
+                    ?>
+                  </div>
+                  <h3 class="c-card2__ttl">
+                    <?php the_title(); ?>
+                  </h3>
+                </div>
               </a>
             </article>
-          <?php endforeach;
-          wp_reset_postdata(); ?>
-        </div>
+        <?php endforeach;
+        wp_reset_postdata(); ?>
       </div>
-    </section>
+    </div>
+  </section>
   <?php endif; ?>
   <!-- CTA -->
   <section class="c-cta1">
     <div class="inner">
-      <h3 class="c-cta1__txt">
+      <p class="c-cta1__txt">
         まずはお気軽にご相談ください
-      </h3>
+      </p>
       <a href="<?php echo home_url('/contact/'); ?>" class="c-cta1__btn">
         お問い合わせはこちら
       </a>
