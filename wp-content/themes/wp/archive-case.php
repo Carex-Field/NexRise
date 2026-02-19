@@ -4,9 +4,9 @@ $pageid = "case"; ?>
 <?php get_header(); ?>
 <main>
   <!-- FV -->
-  <section class="p-case__fv">
+  <section class="c-fv1">
     <div class="inner">
-      <h2 class="p-case__fv__ttl">導入事例</h2>
+      <h2 class="c-fv1__ttl">導入事例</h2>
     </div>
   </section>
   <!-- 一覧 -->

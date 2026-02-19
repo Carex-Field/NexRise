@@ -2,10 +2,6 @@
 @use "../../settings/_mixin" as r;
 
 .p-service-detail {
-  .inner {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-  }
   &__fv {
     position: relative;
     background: linear-gradient(
@@ -14,7 +10,7 @@
       v.$accent-color1 100%
     );
     color: #fff;
-    padding: 120px 0;
+    padding: 100px 0;
     &::before {
       content: "";
       position: absolute;

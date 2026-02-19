@@ -4,11 +4,11 @@ $pageid = "service"; ?>
 <?php get_header() ?>
 <main>
   <!-- FV -->
-  <section class="p-service__fv">
+  <section class="c-fv1">
     <div class="inner">
-      <h2 class="p-service__fv__ttl">サービス一覧</h2>
-      <p class="p-service__fv__lead">
-        課題の本質を捉え、持続的な改善へと導く支援を行います。
+      <h2 class="c-fv1__ttl">サービス一覧</h2>
+      <p class="c-fv1__lead">
+        課題の本質を捉え、持続的な改善へと<br class="sp-only">導く支援を行います。
       </p>
     </div>
   </section>

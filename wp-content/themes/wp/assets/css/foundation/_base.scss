@@ -43,11 +43,6 @@ fieldset {
 a {
   color: inherit;
   text-decoration: none;
-  &:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    -ms-filter: "alpha(opacity=80)";
-  }
 }
 
 img {
@@ -95,6 +90,11 @@ body {
 .l-wrapper {
   position: relative;
   overflow: hidden;
+}
+
+.inner {
+  width: min(1100px, 90%);
+  margin: 0 auto;
 }
 
 .pc-only {

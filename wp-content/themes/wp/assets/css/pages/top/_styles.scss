@@ -2,10 +2,6 @@
 @use "../../settings/_mixin" as r;
 
 .p-top {
-  .inner {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-  }
   &__fv {
     position: relative;
     height: 100vh;
