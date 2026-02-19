@@ -1,0 +1,90 @@
+@use "../../settings/_variable" as v;
+@use "../../settings/_mixin" as r;
+
+.p-contact {
+  &__form {
+    background: v.$base-color;
+    padding: 100px 0;
+    @include r.sp {
+      padding: 70px 0;
+    }
+  }
+}
+
+.wpcf7 {
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 50px;
+    @include r.sp {
+      padding: 30px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    input,
+    textarea,
+    select {
+      width: 100%;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-top: 8px;
+      padding: 14px 16px;
+      transition: 0.3s;
+      &:focus {
+        outline: none;
+        border-color: #005bac;
+        box-shadow: 0 0 0 3px rgba(0, 91, 172, 0.1);
+      }
+    }
+    select {
+      cursor: pointer;
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+  }
+  &-submit {
+    display: block;
+    width: 100%;
+    background: v.$main-color;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px;
+    transition: 0.3s;
+    &:hover {
+      background: v.$accent-color1;
+    }
+  }
+  &-not-valid {
+    border-color: #e53935 !important;
+    &-tip {
+      font-size: 12px;
+      color: #e53935;
+      margin-top: 4px;
+    }
+  }
+  &-response-output {
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 24px;
+    padding: 16px;
+  }
+  &-mail-sent-ok {
+    background: #e8f5e9;
+    border: 1px solid #2e7d32;
+    color: #2e7d32;
+  }
+}
