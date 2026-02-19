@@ -73,6 +73,9 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
+  &.is-fixed {
+    overflow: hidden;
+  }
 }
 
 // Safari用のハックは、Chromeに適用されないようにする

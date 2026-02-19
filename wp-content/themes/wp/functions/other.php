@@ -25,3 +25,13 @@ function dequeue_plugins_style() {
 	wp_dequeue_style('wp-block-library');
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
+
+function my_theme_setup() {
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+
+  register_nav_menus([
+    'global' => 'グローバルメニュー'
+  ]);
+}
+add_action('after_setup_theme', 'my_theme_setup');

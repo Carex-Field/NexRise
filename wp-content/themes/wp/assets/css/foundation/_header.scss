@@ -1,4 +1,125 @@
 @use "../settings/variable" as v;
 @use "../settings/mixin" as r;
 
-// .l-header{}
+.l-header {
+  width: 100%;
+  background: #fff;
+  transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1000;
+  &.is-hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  &.is-visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  &__logo {
+    height: 36px;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      height: 100%;
+    }
+  }
+  &__nav {
+    @include r.sp {
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      width: 80%;
+      height: 100vh;
+      background: #ffffff;
+      padding: 100px 40px;
+      transition: right 0.4s ease;
+      z-index: 2000;
+    }
+    &.is-open {
+      display: block;
+      position: fixed;
+      right: 0;
+      width: 100%;
+      background: #fff;
+      padding: 40px 20px;
+      .l-header__list {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @include r.sp {
+      align-items: flex-start;
+    }
+    li {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      transition: 0.3s;
+      &:hover {
+        color: v.$main-color;
+      }
+      &:last-child {
+        background: v.$main-color;
+        border-radius: 6px;
+        color: #fff;
+        &:hover {
+          background: v.$accent-color1;
+        }
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+  .sp-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include r.sp {
+      display: flex;
+    }
+    &.is-open span {
+      &:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+    span {
+      width: 24px;
+      height: 2px;
+      background: #333;
+      transition: 0.3s;
+    }
+  }
+}
