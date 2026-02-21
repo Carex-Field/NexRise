@@ -22,7 +22,7 @@
       </div>
     </div>
   </section>
-  <section class="p-top1 p-top__sec">
+  <section class="p-top1 p-top__sec c-fade-up">
     <div class="p-top__inner">
       <div class="p-top__head">
         <h2 class="p-top__head__ttl">
@@ -63,7 +63,7 @@
       </p>
     </div>
   </section>
-  <section class="p-top2 p-top__sec">
+  <section class="p-top2 p-top__sec c-fade-up">
     <div class="p-top__inner">
       <div class="p-top__head">
         <h2 class="p-top__head__ttl">サービス</h2>
@@ -112,7 +112,7 @@
       </div>
     </div>
   </section>
-  <section class="p-top3 p-top__sec">
+  <section class="p-top3 p-top__sec c-fade-up">
     <div class="p-top__inner">
       <div class="p-top__head">
         <h2 class="p-top__head__ttl">導入事例</h2>
@@ -172,7 +172,7 @@
       </div>
     </div>
   </section>
-  <section class="p-top4 p-top__sec">
+  <section class="p-top4 p-top__sec c-fade-up">
     <div class="p-top__inner">
       <div class="p-top__head">
         <h2 class="p-top__head__ttl">
@@ -228,7 +228,7 @@
       </div>
     </div>
   </section>
-  <section class="c-cta1">
+  <section class="c-cta1 c-fade-up">
     <div class="inner">
       <p class="c-cta1__ttl">
         その悩み、今日で<br class="sp-only">終わらせましょう。

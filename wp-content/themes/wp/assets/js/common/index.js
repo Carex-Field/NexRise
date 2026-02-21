@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   spMenu.addEventListener("click", toggleMenu);
 
+  // fadeIn
+  gsap.utils.toArray(".c-fade-up").forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      },
+    });
+  });
+
   // カウントアップ
   const numbers = document.querySelectorAll(".c-card2__result__number");
   if (!numbers.length) return;

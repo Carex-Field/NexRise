@@ -26,6 +26,19 @@ function dequeue_plugins_style() {
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
 
+// GASP
+function add_gsap() {
+  wp_enqueue_script(
+    'gsap',
+    'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
+    array(),
+    null,
+    true
+  );
+  wp_enqueue_script( 'gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js', array('gsap'), false, true );
+}
+add_action('wp_enqueue_scripts', 'add_gsap');
+
 function my_theme_setup() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
@@ -40,4 +53,4 @@ add_action('after_setup_theme', 'my_theme_setup');
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
-} 
+}
